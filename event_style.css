@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     font-family: "Brush Script MT",Helvetica, sans-serif;   
-    background: url("/images/PurpleSnow.jpeg") no-repeat center fixed; 
+    background: url("images/PurpleSnow.jpeg") no-repeat center fixed; 
     background-size: cover;
   }
   
@@ -294,40 +294,40 @@
 
 /* Specific background images for each food card */
 .food__card.arroz::before {
-    background-image: url('/images/ArrozConGandules.jpg');
+    background-image: url('images/ArrozConGandules.jpg');
 }
 
 .food__card.chicken::before {
-    background-image: url('/images/RotissierChicken.jpg');
+    background-image: url('images/RotissierChicken.jpg');
 }
 
 .food__card.empanadas::before {
-    background-image: url('/images/Empanadas.webp');
+    background-image: url('images/Empanadas.webp');
 }
 
 .food__card.macandcheese::before {
-    background-image: url('/images/MacAndCheese.jpg');
+    background-image: url('images/MacAndCheese.jpg');
 }
 
 /* Specific background images for each drink card */
 .drinks__card.margaritas::before {
-    background-image: url('/images/FrozenMargarita.webp');
+    background-image: url('images/FrozenMargarita.webp');
 }
 
 .drinks__card.soju::before {
-    background-image: url('/images/Soju.webp');
+    background-image: url('images/Soju.webp');
 }
 
 .drinks__card.champagne::before {
-    background-image: url('/images/Champagne.jfif');
+    background-image: url('images/Champagne.jfif');
 }
 
 .drinks__card.soda::before {
-    background-image: url('/images/Coke.avif');
+    background-image: url('images/Coke.avif');
 }
 
 .drinks__card.water::before {
-    background-image: url('/images/Water.jpg');
+    background-image: url('images/Water.jpg');
 }
 
 /* Hover effect */
