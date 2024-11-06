@@ -1,5 +1,5 @@
 // Initialize accepted guests array
-let acceptedGuests = [];
+let guests = [];
 
 // Event listener for the home page (make sure there's an element with this ID)
 document.getElementById('homePage').addEventListener('click', function () {
@@ -26,7 +26,7 @@ function rsvp(isAccepted) {
               throw new Error('Failed to save RSVP');
           })
           .then(data => {
-              acceptedGuests.push(data.name);
+              guests.push(data.name);
               updateAcceptedList();
               showPage('acceptedPage');
               sendEmail(data.name);
@@ -42,12 +42,11 @@ function rsvp(isAccepted) {
   }
 }
 
-
 // Update accepted guests list
 function updateAcceptedList() {
   const list = document.getElementById('acceptedList');
   list.innerHTML = ''; // Clear existing list
-  acceptedGuests.forEach((guest) => {
+  guests.forEach((guest) => {
     const listItem = document.createElement('li');
     listItem.textContent = guest;
     list.appendChild(listItem);
@@ -86,30 +85,83 @@ function showPage(pageId) {
   // Show the requested page
   document.getElementById(pageId).style.display = 'block';
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Load the accepted guests when the page loads
+  loadAcceptedGuests();
+
+  // Event listener for the RSVP function (this part is working as intended)
+  document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+    e.preventDefault();  // Prevent default form submission
+    const guestName = document.getElementById('guestName').value;
+    if (guestName) {
+      fetch('http://localhost:3000/api/rsvp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: guestName }),
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert('RSVP accepted: ' + data.name);
+        loadAcceptedGuests();  // Reload the list of accepted guests after RSVP
+      })
+      .catch(err => console.error('Error submitting RSVP:', err));
+    } else {
+      alert('Please enter a name');
+    }
+  });
+});
+
+// Function to load the list of accepted guests from the backend
 function loadAcceptedGuests() {
-  fetch('http://localhost:3000/api/accepted')
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Failed to load accepted guests');
-      }
-      return response.json();
-    })
+  fetch('/guestList.json')  // Make sure the path to the file is correct
+    .then(response => response.json())
     .then(data => {
-      acceptedGuests = data.map(guest => guest.name);
-      updateAcceptedList();
+      const list = document.getElementById('guestList');
+      list.innerHTML = '';  // Clear any previous content
+
+      // Ensure the data is in the expected format (an array of guests)
+      if (Array.isArray(data)) {
+        data.forEach(guest => {
+          const listItem = document.createElement('li');
+          listItem.textContent = guest.name;  // Adjust based on your JSON structure
+          list.appendChild(listItem);
+        });
+      } else {
+        alert('No guests found in the file');
+      }
     })
-    .catch(error => console.error('Error loading accepted guests:', error));
+    .catch(error => {
+      console.error('Error loading guest list:', error);
+      alert('Failed to load guest list');
+    });
 }
 
-// Ensure it runs on page load
-document.addEventListener('DOMContentLoaded', loadAcceptedGuests);
+document.getElementById('loadGuestList').addEventListener('click', function() {
+  fetch('guestList.json')
+    .then(response => response.json())
+    .then(data => {
+      const list = document.getElementById('guestList');
+      list.innerHTML = '';  // Clear existing list
 
+      // Check if data is an array and display it
+      if (Array.isArray(data)) {
+        data.forEach(guest => {
+          const listItem = document.createElement('li');
+          listItem.textContent = guest.name;  // Adjust this based on your JSON structure
+          list.appendChild(listItem);
+        });
+      } else {
+        alert('No guests found in the file');
+      }
+    })
+    .catch(error => {
+      console.error('Error loading guest list:', error);
+      alert('Failed to load guest list');
+    });
+});
 
-// Call this function when you want to load the list, for example when showing the acceptedPage
-loadAcceptedGuests();
-
-
-/* MOBILE MENU*/
+/* MOBILE MENU */
 document.getElementById('mobile-menu').addEventListener('click', function() {
     const menu = document.querySelector('.navbar__menu');
     menu.classList.toggle('active'); // This toggles the active class
