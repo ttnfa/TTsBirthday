@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tatiana's 20th Bday Website</title>
+    <link rel="stylesheet" href="rsvp_style.css" />
+  </head>
+  <body>
+    
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo"><i class="/"></i>TT'S BDAY</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/" class="navbar__links">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/event_info.html" class="navbar__links">Event Info</a>
+                </li>
+                <li class="navbar__btn">
+                    <a href="/rsvp.html" class="button">RSVP</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu');
+            const menu = document.querySelector('.navbar__menu');
+        
+            mobileMenuButton.addEventListener('click', function() {
+                menu.classList.toggle('active'); // Toggle the active class
+                mobileMenuButton.classList.toggle('is-active'); // Optional for styling the button
+            });
+        });
+        </script>
+    
+
+    <!-- Hero Section -->
+    <div class="main">
+      <div class="main__container">
+        <div class="main__content">
+          <h1>Here's The Current Guest List!</h1>
+        </div>
+        <div class="main__img--container">
+          <img id="main__img" src="/images/CatCake.webp" />
+        </div>
+      </div>
+    </div>
+
+    <div class = "list">
+      <h2> The Real Ones:</h2>
+      <ul id="acceptedList"></ul>
+    </div>
+  </div>
+</div>
+
+     <!-- Display accepted RSVPs -->
+     <div class = "list">
+      <h2>(If you declined the invitation, then take a look and enjoy the FOMO)</h2>
+      <ul id="acceptedList"></ul>
+    </div>
+  </div>
+</div>
+
+    <!-- Footer Section -->
+    <div class="content">
+      <!-- Your main content goes here -->
+  </div>
+  <div class="footer__container">
+      <div class="footer__links">
+          <div class="footer__link--wrapper">
+              <div class="footer__link--items">
+                  <h2>Contact Info</h2>
+                  <a href="/">347-909-1956</a>
+                  <a href="/InstaQR.png">Insta: tt.nfa</a>
+                  <a href="/">Snap: jk I don't use this</a>
+              </div>
+              <div class="footer__link--items"></div>
+          </div>
+          <div class="footer__link--wrapper">
+              <div class="footer__link--items">
+                  <h2>More...</h2>
+                  <a href="/event_info.html">Food/Drinks (Snacks are TBD)</a>
+                  <a href="/event_info.html">Disclaimer/Dress Code</a>
+              </div>
+              <div class="footer__link--items"></div>
+          </div>
+      </div>
+  </div>
+      </section>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

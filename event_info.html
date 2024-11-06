@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tatiana's 20th Bday Website</title>
+    <link rel="stylesheet" href="event_style.css" />
+  </head>
+  <body>
+    
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo"><i class="/"></i>TT'S BDAY</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/" class="navbar__links">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/event_info.html" class="navbar__links">Event Info</a>
+                </li>
+                <li class="navbar__btn">
+                    <a href="/rsvp.html" class="button">RSVP</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu');
+            const menu = document.querySelector('.navbar__menu');
+        
+            mobileMenuButton.addEventListener('click', function() {
+                menu.classList.toggle('active'); // Toggle the active class
+                mobileMenuButton.classList.toggle('is-active'); // Optional for styling the button
+            });
+        });
+        </script>
+    
+
+    <!-- FOOD/DRINIK-->
+    <div class="main">
+      <div class="main__container">
+        <h1>Event Details</h1>
+
+        <div class = "address">
+          <img src = "/images/Address.png" alt="google__address"/>
+          <p> Address: 7438 88th Ave Apt 2, Jamaica, NY, 11374</p>
+        </div>
+
+        <div class = "more__info">
+          <br>
+          <p> Start Time: 5:00pm </p>
+          <br>
+          <p> Be there or be square!</p>
+          <br>
+          <p>Dress Code: pls dont show up in sweats or messy clothing (it'll make me want to kms and you..)</p>
+          <br>
+          <p> PLEASE NOTE: Food and drinks for the celebration have been chosen. If anyone has any allergies PLEASE LET ME KNOW ASAP. If the food is just not to your liking, then suffer ig (jk). You're more than welcome to bring anything you believe you or others will like!</p>
+        </div>
+
+       
+    
+        <div class="main__content">
+          <h2 class="section-header">Food (yum!)</h2>
+          <div class="cards-container">
+            <div class="food__card arroz">
+              <p>Arroz Con Gandules</p>
+            </div>
+            <div class="food__card chicken">
+              <p>Rotisserie Chicken</p>
+            </div>
+            <div class="food__card empanadas">
+              <p>Empanadas</p>
+            </div>
+            <div class="food__card macandcheese">
+              <p>Mac and Cheese</p>
+            </div>
+          </div>
+    
+          <h2 class="section-header">Drinks (ik you're all alcoholics, its in your blood (not u kristy ily))</h2>
+          <div class="cards-container">
+            <div class="drinks__card margaritas">
+              <p>Frozen Margaritas</p>
+            </div>
+            <div class="drinks__card soju">
+              <p>Soju</p>
+            </div>
+            <div class="drinks__card champagne">
+              <p>Champagne</p>
+            </div>
+            <div class="drinks__card soda">
+              <p>Soda</p>
+            </div>
+            <div class="drinks__card water">
+              <p>Water DUHHH</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Footer Section -->
+    <div class="content">
+      
+  </div>
+  <div class="footer__container">
+      <div class="footer__links">
+          <div class="footer__link--wrapper">
+              <div class="footer__link--items">
+                  <h2>Contact Info</h2>
+                  <a href="/">347-909-1956</a>
+                  <a href="/InstaQR.png">Insta: tt.nfa</a>
+                  <a href="/">Snap: jk I don't use this</a>
+              </div>
+              <div class="footer__link--items"></div>
+          </div>
+          <div class="footer__link--wrapper">
+              <div class="footer__link--items">
+                  <h2>More...</h2>
+                  <a href="/event_info.html">Food/Drinks (Snacks are TBD)</a>
+                  <a href="/event_info.html">Disclaimer/Dress Code</a>
+              </div>
+              <div class="footer__link--items"></div>
+          </div>
+      </div>
+      
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
