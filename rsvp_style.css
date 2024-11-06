@@ -6,10 +6,9 @@
     background: url("/images/PinkPurple.jpeg") no-repeat center fixed; 
     background-size: cover;
   }
-  
-  /* NAVBAR*/
+/* NAVBAR*/
 
-  .navbar {
+.navbar {
     color: #f5f190;
     height: 100px;
     display: flex;
@@ -131,6 +130,7 @@
         opacity: 0; /* Fully transparent */
         transition: all 0.5s ease;
         height: auto; /* Set height to auto to accommodate content */
+         /* Set the background color to #eaaeea */
         z-index: 1;
     }
 
@@ -203,6 +203,7 @@
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
 
 /* MAIN CONTENT*/
 
@@ -288,6 +289,46 @@
     color: #e9e9e9; /* Hover color */
     transition: 0.3s ease-out; /* Transition for hover */
 }
+
+/*MAIN*/
+
+.main__content{
+    font-size: 2rem;
+}
+
+/* GUEST LIST*/
+.list p{
+    font-size: 2rem;
+}
+
+.list h2{
+    font-size: 3rem;
+}
+
+.list button{
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for the button */
+    color: #ffe682; /* Button text color */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 15px 30px; /* Padding for button */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s; /* Smooth background color transition */
+    z-index: 2; /* Ensure button is above the background */
+    font-size: 3rem;
+   
+}
+
+.list button:hover {
+    color: #8b3030;
+  }
+
+ #guestList{
+    text-align: center;
+    color: #bc4e90;
+    font-size: 2.5rem;
+ }
+
+
 
 /* Extra Section */
 .footer_extras {
