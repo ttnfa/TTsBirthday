@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     font-family: "Brush Script MT",Helvetica, sans-serif;   
-    background: url("/images/PurpleClouds.jpeg") no-repeat center fixed; 
+    background: url("images/PurpleClouds.jpeg") no-repeat center fixed; 
     background-size: cover;
   }
   
